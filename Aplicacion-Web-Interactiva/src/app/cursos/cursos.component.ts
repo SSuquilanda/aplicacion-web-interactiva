@@ -1,12 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cursos',
   standalone: true,
-  imports: [],
   templateUrl: './cursos.component.html',
-  styleUrl: './cursos.component.scss'
+  styleUrls: ['./cursos.component.scss']
 })
-export class CursosComponent {
+export class CursosComponent implements OnInit {
+  cursos: any[] = [];
 
+  constructor() { }
+
+  ngOnInit(): void {
+    this.cargarCursos();
+  }
+
+  cargarCursos() {
+    const cursosGuardados = localStorage.getItem('cursos');
+    this.cursos = cursosGuardados ? JSON.parse(cursosGuardados) : [];
+  }
+
+  agregarCurso(curso: any) {
+    this.cursos.push(curso);
+    localStorage.setItem('cursos', JSON.stringify(this.cursos));
+  }
+
+  eliminarCurso(index: number) {
+    this.cursos.splice(index, 1);
+    localStorage.setItem('cursos', JSON.stringify(this.cursos));
+  }
 }
