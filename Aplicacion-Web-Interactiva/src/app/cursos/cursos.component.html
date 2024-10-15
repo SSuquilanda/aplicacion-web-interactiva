@@ -1,4 +1,34 @@
-<h2>Lista de Cursos</h2>
-          <div id="lista-cursos" class="course-container">
-            <!-- En esta parte van aparecer los cursos de forma dinamica-->
-          </div>
+<div id="lista-cursos" class="course-container">
+    <img src="Mi-proyecto/Images/cursos.jpeg" alt="Cursos" class="course-image">
+    <div class="course-title-container">
+        <h2>Lista de Cursos</h2>
+        <!-- Aquí aparecerán los cursos de forma dinámica -->
+    </div>
+</div>
+
+<section id="agregar-curso">
+    <div class="section-content">
+        <img src="Mi-proyecto/Images/agregar_cursos.jpeg" alt="Agregar Curso" class="add-course-image">
+        <div class="form-container">
+            <h3>Agregar un Nuevo Curso</h3>
+            <form id="form-curso" (submit)="onSubmit($event)">
+                <label for="nombre">Nombre del Curso:</label>
+                <input type="text" id="nombre" [(ngModel)]="curso.nombre" name="nombre" required>
+
+                <label for="instructor">Instructor:</label>
+                <input type="text" id="instructor" [(ngModel)]="curso.instructor" name="instructor" required>
+
+                <label for="fecha">Fecha de Inicio:</label>
+                <input type="date" id="fecha" [(ngModel)]="curso.fecha" name="fecha" required>
+
+                <label for="duracion">Duración (en semanas):</label>
+                <input type="number" id="duracion" [(ngModel)]="curso.duracion" name="duracion" required>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" [(ngModel)]="curso.descripcion" name="descripcion" required></textarea>
+
+                <button type="submit">Agregar Curso</button>
+            </form>
+        </div>
+    </div>
+</section>

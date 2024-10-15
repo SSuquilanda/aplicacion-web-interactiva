@@ -1,0 +1,88 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Títulos */
+h2, h3 {
+    color: #333;
+}
+
+/* Contenedor de la lista de cursos */
+#lista-cursos {
+    display: flex; /* Usar flexbox para alinear imagen y título */
+    align-items: center; /* Centrar verticalmente */
+    margin-bottom: 40px; /* Espacio entre secciones */
+}
+
+/* Imagen de la lista de cursos */
+.course-image {
+    max-width: 150px; /* Ajustar tamaño */
+    height: auto; /* Mantener proporción */
+    margin-right: 20px; /* Espacio entre la imagen y el título */
+}
+
+/* Contenedor del título de cursos */
+.course-title-container {
+    flex-grow: 1; /* Permitir que el título ocupe el espacio restante */
+}
+
+/* Estilos de agregar curso */
+#agregar-curso {
+    background-color: #f9f9f9; /* Fondo claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Imagen para agregar curso */
+.add-course-image {
+    max-width: 150px; /* Tamaño ajustado */
+    height: auto;
+    margin-right: 20px; /* Espacio entre la imagen y el formulario */
+}
+
+/* Contenedor del formulario */
+.form-container {
+    flex-grow: 1;
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4CAF50; /* Color de botón */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* Efecto hover */
+}
