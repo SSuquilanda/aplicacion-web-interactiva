@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { CursoService } from '../services/curso.service';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-cursos',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.scss']
 })
 export class CursosComponent implements OnInit {
   cursos: any[] = [];
 
-  constructor() { }
+  constructor(private cursoService: CursoService) { }
 
   ngOnInit(): void {
     this.cargarCursos();
@@ -23,6 +24,8 @@ export class CursosComponent implements OnInit {
   }
 
   agregarCurso(curso: any) {
+    // Agregar la imagen del curso usando el servicio
+    curso.imagen = this.cursoService.obtenerImagenCurso(curso.nombre);
     this.cursos.push(curso);
     localStorage.setItem('cursos', JSON.stringify(this.cursos));
   }
@@ -36,7 +39,8 @@ export class CursosComponent implements OnInit {
     instructor: '',
     fecha: '',
     duracion: null,
-    descripcion: ''
+    descripcion: '',
+    imagen: ''
   };
 
 
@@ -44,8 +48,7 @@ export class CursosComponent implements OnInit {
   onSubmit(event: Event) {
     event.preventDefault(); // Previene el comportamiento por defecto del formulario
 
-    // Aquí puedes manejar la lógica para agregar el curso
-    console.log('Curso agregado:', this.curso);
+    this.agregarCurso(this.curso); // Llamar a agregarCurso con la nueva estructura
 
     // Resetear el formulario si es necesario
     this.curso = {
@@ -53,7 +56,8 @@ export class CursosComponent implements OnInit {
       instructor: '',
       fecha: '',
       duracion: null,
-      descripcion: ''
-    };
-}
+      descripcion: '',
+      imagen: ''
+};
+  }
 }

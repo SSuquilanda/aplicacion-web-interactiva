@@ -86,3 +86,24 @@ button {
 button:hover {
     background-color: #45a049; /* Efecto hover */
 }
+.course-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .curso-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .course-image {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .course-title-container {
+    flex-grow: 1;
+  }
+  

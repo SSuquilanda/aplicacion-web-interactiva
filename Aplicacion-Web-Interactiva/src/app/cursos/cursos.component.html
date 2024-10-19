@@ -1,14 +1,20 @@
-<div id="lista-cursos" class="course-container">
-    <img src="Mi-proyecto/Images/cursos.jpeg" alt="Cursos" class="course-image">
-    <div class="course-title-container">
+
+
+<div id="lista-cursos" class="course-container" *ngIf="cursos.length > 0">
+    <div *ngFor="let curso of cursos; let i = index" class="curso-item">
+      <img [src]="curso.imagen" alt="Imagen del curso" class="course-image">
+      <div class="course-title-container">
         <h2>Lista de Cursos</h2>
-        <!-- Aquí aparecerán los cursos de forma dinámica -->
+        <h3>{{ curso.nombre }}</h3>
+        <p>{{ curso.instructor }} - {{ curso.fecha }} - {{ curso.duracion }} semanas</p>
+        <p>{{ curso.descripcion }}</p>
+        <button (click)="eliminarCurso(i)">Eliminar Curso</button>
+      </div>
     </div>
-</div>
+  </div>
 
 <section id="agregar-curso">
     <div class="section-content">
-        <img src="Mi-proyecto/Images/agregar_cursos.jpeg" alt="Agregar Curso" class="add-course-image">
         <div class="form-container">
             <h3>Agregar un Nuevo Curso</h3>
             <form id="form-curso" (submit)="onSubmit($event)">
