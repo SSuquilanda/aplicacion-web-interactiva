@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CursoService } from '../services/curso.service';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-cursos',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,RouterModule, HttpClientModule],
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.scss']
 })
@@ -24,10 +26,11 @@ export class CursosComponent implements OnInit {
   }
 
   agregarCurso(curso: any) {
-    // Agregar la imagen del curso usando el servicio
-    curso.imagen = this.cursoService.obtenerImagenCurso(curso.nombre);
-    this.cursos.push(curso);
-    localStorage.setItem('cursos', JSON.stringify(this.cursos));
+    this.cursoService.obtenerImagenCurso(curso.nombre).subscribe((response: any) => {
+      curso.imagen = response.urls.small; // Usamos la imagen de tamaño pequeño
+      this.cursos.push(curso);
+      localStorage.setItem('cursos', JSON.stringify(this.cursos));
+    });
   }
 
   eliminarCurso(index: number) {

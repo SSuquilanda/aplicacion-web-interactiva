@@ -97,13 +97,54 @@ button:hover {
     margin-bottom: 20px;
   }
   
-  .course-image {
-    max-width: 150px;
-    height: auto;
-    margin-right: 20px;
+  
+  
+  
+  .curso-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    max-width: 600px;
   }
   
-  .course-title-container {
+  .curso-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .curso-imagen img {
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  
+  .curso-info {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
+  }
+  
+  .curso-info p {
+    margin: 5px 0;
+  }
+  
+  button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #218838;
   }
   

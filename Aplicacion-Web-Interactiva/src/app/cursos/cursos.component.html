@@ -1,16 +1,17 @@
 
 
-<div id="lista-cursos" class="course-container" *ngIf="cursos.length > 0">
-    <div *ngFor="let curso of cursos; let i = index" class="curso-item">
-      <img [src]="curso.imagen" alt="Imagen del curso" class="course-image">
-      <div class="course-title-container">
-        <h2>Lista de Cursos</h2>
-        <h3>{{ curso.nombre }}</h3>
-        <p>{{ curso.instructor }} - {{ curso.fecha }} - {{ curso.duracion }} semanas</p>
-        <p>{{ curso.descripcion }}</p>
-        <button (click)="eliminarCurso(i)">Eliminar Curso</button>
-      </div>
-    </div>
+<div *ngFor="let curso of cursos">
+    <h2>{{ curso.nombre }}</h2>
+    <p><strong>Instructor:</strong> {{ curso.instructor }}</p>
+    <p><strong>Fecha:</strong> {{ curso.fecha }}</p>
+    <p><strong>Duración:</strong> {{ curso.duracion }} semanas</p>
+    <p><strong>Descripción:</strong> {{ curso.descripcion }}</p>
+  
+    <!-- Aquí mostramos la imagen del curso -->
+    <img [src]="curso.imagen" alt="Imagen de {{ curso.nombre }}" width="200" height="150">
+    
+    <!-- Botón para eliminar curso -->
+    <button (click)="eliminarCurso(curso)">Eliminar Curso</button>
   </div>
 
 <section id="agregar-curso">
