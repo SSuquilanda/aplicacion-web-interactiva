@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CursoService } from '../services/curso.service';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-cursos',
   standalone: true,
-  imports: [FormsModule, CommonModule,RouterModule, HttpClientModule],
+  imports: [FormsModule, CommonModule,RouterModule],
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.scss']
 })
 export class CursosComponent implements OnInit {
   cursos: any[] = [];
+  datoAleatorio: any = null;
 
   constructor(private cursoService: CursoService) { }
 
@@ -26,8 +26,11 @@ export class CursosComponent implements OnInit {
   }
 
   agregarCurso(curso: any) {
-    this.cursoService.obtenerImagenCurso(curso.nombre).subscribe((response: any) => {
-      curso.imagen = response.urls.small; // Usamos la imagen de tamaño pequeño
+    this.cursoService.obtenerDatoAleatorio().subscribe((datoResponse: any) => {
+      this.datoAleatorio = datoResponse; // Guardar el dato aleatorio
+      console.log(this.datoAleatorio); // Muestra el dato aleatorio en la consola
+
+      // Aquí puedes agregar el curso o hacer algo más con el dato
       this.cursos.push(curso);
       localStorage.setItem('cursos', JSON.stringify(this.cursos));
     });
@@ -43,7 +46,7 @@ export class CursosComponent implements OnInit {
     fecha: '',
     duracion: null,
     descripcion: '',
-    imagen: ''
+    
   };
 
 
@@ -59,8 +62,8 @@ export class CursosComponent implements OnInit {
       instructor: '',
       fecha: '',
       duracion: null,
-      descripcion: '',
-      imagen: ''
+      descripcion: ''
+      
 };
   }
 }

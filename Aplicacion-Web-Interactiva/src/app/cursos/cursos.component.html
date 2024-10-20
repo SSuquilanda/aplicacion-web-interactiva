@@ -1,5 +1,3 @@
-
-
 <div *ngFor="let curso of cursos">
     <h2>{{ curso.nombre }}</h2>
     <p><strong>Instructor:</strong> {{ curso.instructor }}</p>
@@ -7,12 +5,8 @@
     <p><strong>Duración:</strong> {{ curso.duracion }} semanas</p>
     <p><strong>Descripción:</strong> {{ curso.descripcion }}</p>
   
-    <!-- Aquí mostramos la imagen del curso -->
-    <img [src]="curso.imagen" alt="Imagen de {{ curso.nombre }}" width="200" height="150">
-    
-    <!-- Botón para eliminar curso -->
     <button (click)="eliminarCurso(curso)">Eliminar Curso</button>
-  </div>
+</div>
 
 <section id="agregar-curso">
     <div class="section-content">
@@ -39,3 +33,10 @@
         </div>
     </div>
 </section>
+
+<!-- Mostrar el dato aleatorio -->
+<div *ngIf="datoAleatorio" style="margin-top: 20px;">
+    <h4>Dato Aleatorio:</h4>
+    <p><strong>Nombre:</strong> {{ datoAleatorio.first_name }} {{ datoAleatorio.last_name }}</p>
+    <p><strong>Email:</strong> {{ datoAleatorio.email }}</p>
+</div>
