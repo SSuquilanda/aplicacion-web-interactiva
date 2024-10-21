@@ -12,17 +12,12 @@ h2, h3 {
 
 /* Contenedor de la lista de cursos */
 #lista-cursos {
-    display: flex; /* Usar flexbox para alinear imagen y título */
-    align-items: center; /* Centrar verticalmente */
+    
+    
     margin-bottom: 40px; /* Espacio entre secciones */
 }
 
-/* Imagen de la lista de cursos */
-.course-image {
-    max-width: 150px; /* Ajustar tamaño */
-    height: auto; /* Mantener proporción */
-    margin-right: 20px; /* Espacio entre la imagen y el título */
-}
+
 
 /* Contenedor del título de cursos */
 .course-title-container {
@@ -32,33 +27,49 @@ h2, h3 {
 /* Estilos de agregar curso */
 #agregar-curso {
     background-color: #f9f9f9; /* Fondo claro */
+    
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
+    box-shadow: 0 2px 10px rgba(34, 136, 191, 0.1); /* Sombra sutil */
+    width: 85%; /* Ancho de la sección */
+    margin-right: 20px; /* Espacio entre el formulario y la lista de cursos */
+    margin-left: 0; 
+    }
 
+  #listar-curso {
+      background-color: #8fcdd5; /* Fondo claro */
+      
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(7, 11, 221, 0.1); /* Sombra sutil */
+      width: 85%; /* Ancho de la sección */
+      }
+      #dato-aleatorio {
+        background-color: #9eaee3; /* Fondo claro */
+        
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(7, 11, 221, 0.1); /* Sombra sutil */
+        width: 85%; /* Ancho de la sección */
+        }
 .section-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  justify-content: flex-start;
 }
 
-/* Imagen para agregar curso */
-.add-course-image {
-    max-width: 150px; /* Tamaño ajustado */
-    height: auto;
-    margin-right: 20px; /* Espacio entre la imagen y el formulario */
-}
+
 
 /* Contenedor del formulario */
 .form-container {
-    flex-grow: 1;
+    flex-grow: 2;
 }
 
 /* Estilos del formulario */
 form {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0; 
 }
 
 label {
@@ -76,7 +87,7 @@ input, textarea {
 button {
     margin-top: 15px;
     padding: 10px;
-    background-color: #4CAF50; /* Color de botón */
+    background-color: #4c9baf; /* Color de botón */
     color: white;
     border: none;
     border-radius: 4px;
@@ -84,7 +95,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Efecto hover */
+    background-color: #4586a0; /* Efecto hover */
 }
 .course-container {
     display: flex;
@@ -107,7 +118,7 @@ button:hover {
     padding: 16px;
     margin-bottom: 10px;
     border-radius: 8px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 8px rgba(14, 126, 177, 0.1);
     background-color: #f9f9f9;
     max-width: 600px;
   }
@@ -117,12 +128,7 @@ button:hover {
     align-items: center;
   }
   
-  .curso-imagen img {
-    width: 100px;
-    height: auto;
-    border-radius: 4px;
-    object-fit: cover;
-  }
+  
   
   .curso-info {
     display: flex;
@@ -135,7 +141,7 @@ button:hover {
   }
   
   button {
-    background-color: #28a745;
+    background-color: #2881a7;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -145,6 +151,6 @@ button:hover {
   }
   
   button:hover {
-    background-color: #218838;
+    background-color: #214888;
   }
   

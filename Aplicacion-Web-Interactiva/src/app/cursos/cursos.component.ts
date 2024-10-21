@@ -27,10 +27,10 @@ export class CursosComponent implements OnInit {
 
   agregarCurso(curso: any) {
     this.cursoService.obtenerDatoAleatorio().subscribe((datoResponse: any) => {
-      this.datoAleatorio = datoResponse; // Guardar el dato aleatorio
-      console.log(this.datoAleatorio); // Muestra el dato aleatorio en la consola
+      this.datoAleatorio = datoResponse; // Guarda el dato
+      console.log(this.datoAleatorio); // Muestra el dato
 
-      // Aquí puedes agregar el curso o hacer algo más con el dato
+      // Se agrega el curso
       this.cursos.push(curso);
       localStorage.setItem('cursos', JSON.stringify(this.cursos));
     });
@@ -56,7 +56,7 @@ export class CursosComponent implements OnInit {
 
     this.agregarCurso(this.curso); // Llamar a agregarCurso con la nueva estructura
 
-    // Resetear el formulario si es necesario
+    // Resetear el formulario 
     this.curso = {
       nombre: '',
       instructor: '',

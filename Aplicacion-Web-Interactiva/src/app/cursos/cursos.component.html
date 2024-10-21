@@ -1,12 +1,4 @@
-<div *ngFor="let curso of cursos">
-    <h2>{{ curso.nombre }}</h2>
-    <p><strong>Instructor:</strong> {{ curso.instructor }}</p>
-    <p><strong>Fecha:</strong> {{ curso.fecha }}</p>
-    <p><strong>Duración:</strong> {{ curso.duracion }} semanas</p>
-    <p><strong>Descripción:</strong> {{ curso.descripcion }}</p>
-  
-    <button (click)="eliminarCurso(curso)">Eliminar Curso</button>
-</div>
+
 
 <section id="agregar-curso">
     <div class="section-content">
@@ -33,10 +25,23 @@
         </div>
     </div>
 </section>
+<section id = "listar-curso">
+<div *ngFor="let curso of cursos">
+    <h2>{{ curso.nombre }}</h2>
+    <p><strong>Instructor:</strong> {{ curso.instructor }}</p>
+    <p><strong>Fecha:</strong> {{ curso.fecha }}</p>
+    <p><strong>Duración:</strong> {{ curso.duracion }} semanas</p>
+    <p><strong>Descripción:</strong> {{ curso.descripcion }}</p>
 
-<!-- Mostrar el dato aleatorio -->
+    <button (click)="eliminarCurso(curso)">Eliminar Curso</button>
+</div>
+</section>
+
+<section id = "dato-aleatorio">
+<!-- En esta parte se muestra el dato aleatorio -->
 <div *ngIf="datoAleatorio" style="margin-top: 20px;">
     <h4>Dato Aleatorio:</h4>
     <p><strong>Nombre:</strong> {{ datoAleatorio.first_name }} {{ datoAleatorio.last_name }}</p>
     <p><strong>Email:</strong> {{ datoAleatorio.email }}</p>
 </div>
+</section>
